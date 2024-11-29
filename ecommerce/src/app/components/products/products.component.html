@@ -1,0 +1,16 @@
+
+<div class="product-list">
+    <div class="product-item" *ngFor="let i of products;">
+        <div style="width:100%; text-align:center">
+            <img src="{{i.images}}" alt="Denim Jeans" style="width:100px; height: 100px;">
+        </div>
+        <h3>{{i.title}}</h3>
+        <p>$ {{i.price}}</p>
+        <p>{{i.description}}
+        <div class="button-container">
+            <button class="add-to-cart-button">
+                Add to Cart
+            </button>
+        </div>
+    </div>
+</div>
