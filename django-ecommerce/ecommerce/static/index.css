@@ -1,0 +1,82 @@
+#addProductModal .modal-content {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#addProductModal .modal-header {
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+}
+
+#addProductModal .modal-header .close {
+  color: white;
+  font-size: 30px;
+  opacity: 1;
+}
+
+#addProductModal .modal-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+#addProductModal .modal-body {
+  padding: 25px;
+}
+
+#addProductModal .form-group {
+  margin-bottom: 20px;
+}
+
+#addProductModal .form-group label {
+  font-weight: bold;
+}
+
+#addProductModal .form-control {
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s;
+}
+
+#addProductModal .form-control:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+#addProductModal .form-group input[type="file"] {
+  border: none;
+  padding: 10px;
+  background-color: #f8f9fa;
+}
+
+#addProductModal .form-group textarea {
+  resize: vertical;
+  height: 150px;
+}
+
+/* Submit Button */
+#addProductModal .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+#addProductModal .btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+/* Modal Footer */
+#addProductModal .modal-footer {
+  border-top: 1px solid #ddd;
+  padding: 15px;
+}
+
+/* Modal Background */
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}

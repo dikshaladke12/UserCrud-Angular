@@ -1,0 +1,21 @@
+<div class="about-section">
+    <h1>About Us.. </h1>
+    <br>
+    <h4>{{description}}</h4>
+
+</div>
+
+<h2 style="text-align:center"></h2>
+<div class="row">
+    <div class="column" *ngFor="let i of product;">
+        <div class="card">
+            <div class="container">
+                
+                <div style="width:100%; text-align:center">
+                    <h3>{{i.product}}</h3>
+                    <img src="{{i.imageUrl}}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

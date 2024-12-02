@@ -1,0 +1,38 @@
+<br><br>
+<div class="container">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-25">
+                <label for="name">Name: </label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="name" name="firstname" placeholder="Your name.." formControlName="name">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="subject">Subject</label>
+            </div>
+            <div class="col-75">
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:50px"
+                    formControlName="subject"></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="message">message: </label>
+            </div>
+            <div class="col-75">
+                <textarea type="text" id="message" name="message" placeholder="message.." style="height:50px"
+                    formControlName="message"></textarea>
+            </div>
+        </div>
+        <br>
+
+
+        <button type="submit" [disabled]="myForm.invalid" class="button">Submit</button>
+
+    </form>
+</div>
