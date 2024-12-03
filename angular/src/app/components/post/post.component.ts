@@ -10,7 +10,13 @@ import { ApiServiceService } from '../../services/api-service.service';
 export class PostComponent implements OnInit {
 
   user : any[]=[];
-  data : any;
+  userInfo :any;
+  
+  firstName: any;
+  lastName: any;
+  age: any;
+  email: any;
+  userName: any
 
   constructor(private apiService: ApiServiceService){  }
 
@@ -21,18 +27,29 @@ export class PostComponent implements OnInit {
   fetchData(): void{
     this.apiService.fetchAllUser().subscribe(response=>{
       this.user= response.userData;
+      console.log("user", this.user)
     })
   }
 
-  fetchDataById(id: any): void{
-    this.apiService.fetchUserById(id).subscribe(response=>{
-      console.log(response,"fffffff")
-      this.data =response.userData;
+  view(id: any): void{
+    this.apiService.fetchUserById(id).subscribe({
+      next: res=>{
+        this.firstName = res.userData.firstName;
+        this.lastName = res.userData.lastName;
+        this.age = res.userData.age;
+        this.email = res.userData.email;
+        this.userName = res.userData.userName;
+      }
     })
   }
 
   delete(id: any):void{
-    this.apiService.deleteUser(id).subscribe()
+    console.log("id :", id)
+    this.apiService.deleteUser(id).subscribe({
+      next: res=>{
+        console.log("id deleted", res);
+        this.fetchData()
+      }
+    })
   }
-
 }

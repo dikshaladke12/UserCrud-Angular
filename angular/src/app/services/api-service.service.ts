@@ -12,6 +12,14 @@ export class ApiServiceService {
   private baseUrl = environment.baseUrl;
 
   constructor( private http: HttpClient ) { } 
+  
+  login(data: any): Observable<any>{
+    return this.http.post(`${this.baseUrl}/login`, data)
+  }
+
+  register(data:any):Observable<any>{
+    return this.http.post(`${this.baseUrl}/addUser`,data)
+  }
 
   fetchAllUser(): Observable<any>{
     return this.http.get(`${this.baseUrl}/details`)

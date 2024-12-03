@@ -1,0 +1,65 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand">WebSiteName</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Add User</a></li>
+            <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="outer-div">
+    <div class="main">
+        <h1>Update Information</h1>
+        <div *ngIf="user">
+            <form (ngSubmit)="update()">
+                <label>
+                    firstName:
+                </label>
+                <input type="text" [(ngModel)]="user.firstName" name="firstName" placeholder="Enter your firstName">
+
+                <label>
+                    lastName:
+                </label>
+                <input type="text" [(ngModel)]="user.lastName" name="lastName" placeholder="Enter your lastName">
+
+                <label>
+                    Email:
+                </label>
+                <input type="text" [(ngModel)]="user.email" name="email" placeholder="Enter your Email">
+
+                <label>
+                    Age:
+                </label>
+                <input type="text" [(ngModel)]="user.age" name="age" placeholder="Enter your age">
+
+                <label>
+                    Password:
+                </label>
+                <input type="password" [(ngModel)]="user.password" name="password" placeholder="Enter your Password">
+
+                <label>
+                    userName:
+                </label>
+                <input type="text" [(ngModel)]="user.userName" name="userName" placeholder="Enter your userName">
+
+                <div class="wrap">
+                    <button type="submit">
+                        Update
+                    </button>
+                </div>
+            </form>
+
+            <p>
+                <a href="/" style="text-decoration: none;">
+                    back to Dashboard
+                </a>
+            </p>
+        </div>
+    </div>
+</div>

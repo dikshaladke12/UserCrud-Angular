@@ -1,37 +1,76 @@
-<div class="table-div">
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            UserInformation
-        </a>
-    </nav>
-  
-    <table class="table table-dark table-hover">
-        <thead>
-            <tr>
-                <th>sr. No</th>
-                <th>firstName</th>
-                <th>lastName</th>
-                <th>Age</th>
-                <th>Email</th>
-                <th>userName</th>
-                <th>Image</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let i of user; index as j">
-                <td>{{j+1}}</td>
-                <td>{{i.firstName}}</td>
-                <td>{{i.lastName}}</td>
-                <td>{{i.age}}</td>
-                <td>{{i.email}}</td>
-                <td>{{i.userName}}</td>
-                <td><img src="http://localhost:4000/{{i.image}}" width="80px" height="80px"></td>
-                <td>
-                    <button class="btn btn-primary" (click)="delete(i._id)">Delete</button>&nbsp;
-                    <button class="btn btn-info">Update</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand">WebSiteName</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Add User</a></li>
+            <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>sr. No</th>
+            <th>firstName</th>
+            <th>lastName</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>userName</th>
+            <th>Image</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of user; index as j">
+            <td>{{j+1}}</td>
+            <td>{{i.firstName}}</td>
+            <td>{{i.lastName}}</td>
+            <td>{{i.age}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.userName}}</td>
+            <td><img src="http://localhost:4000/{{i.image}}" width="80px" height="80px"></td>
+            <td>
+                <button class="btn btn-primary" (click)="delete(i._id)">Delete</button>&nbsp;
+                <button (click)="view(i._id)" class="btn data-mdb-button-init" data-toggle="modal"
+                    data-target="#exampleModal">View</button>&nbsp;
+                <button routerLink="/update/{{i._id}}">Update </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">User Information</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>full Name: {{firstName}} {{lastName}}</p>
+                <p>Age: {{age}}</p>
+                <p>Username: {{userName}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
 </div>
+
+<script>
+    $('#exampleModal').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+    })
+</script>

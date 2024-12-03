@@ -1,0 +1,47 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand">WebSiteName</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/register"><span class="glyphicon glyphicon-user"></span>  Add User</a></li>
+            <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="outer-div">
+    <div class="main">
+        <h1>Login</h1>
+        <h3>Enter your login credentials</h3>
+
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <label for="first">
+                Email:
+            </label>
+            <input type="text" id="first" name="email" placeholder="Enter your Email" formControlName="email" required>
+
+            <label for="password">
+                Password:
+            </label>
+            <input type="password" id="password" name="password" placeholder="Enter your Password"
+                formControlName="password" required>
+
+            <div class="wrap">
+                <button type="submit" [disabled]="myForm.invalid">
+                    Submit
+                </button>
+            </div>
+        </form>
+
+        <p>Not registered?
+            <a href="/register" style="text-decoration: none;">
+                Create an account
+            </a>
+        </p>
+    </div>
+</div>
