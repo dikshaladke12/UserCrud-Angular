@@ -1,0 +1,11 @@
+.notfound{
+    text-align: center;
+    height: 100vh;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }
